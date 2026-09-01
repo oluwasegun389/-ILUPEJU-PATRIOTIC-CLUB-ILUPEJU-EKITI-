@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPC Membership Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { 
+            background-color: #f3f4f6;
+            background-image: linear-gradient(rgba(243, 244, 246, 0.85), rgba(243, 244, 246, 0.90)), url('Header.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+        .form-section { 
+            background: rgba(255, 255, 255, 0.95); 
+            padding: 2rem; 
+            border-radius: 0.75rem; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+            margin-bottom: 2rem; 
+            backdrop-filter: blur(5px);
+        }
+        .brand-green { color: #004d00; }
+        .bg-brand-green { background-color: #004d00; }
+        .bg-brand-green:hover { background-color: #003300; }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <header class="w-full mb-8 shadow-md border-b-4 border-yellow-500 bg-white text-center">
+        <div class="w-full bg-[#002600]">
+            <img src="Header.jpg" alt="IPC Header Banner" class="w-full h-auto max-h-[400px] object-cover sm:object-contain mx-auto">
+        </div>
+        <div class="py-5">
+            <h1 class="text-2xl md:text-3xl font-bold brand-green uppercase tracking-wider">Ilupeju Patriotic Club, Ilupeju-Ekiti</h1>
+            <h2 class="text-xl font-semibold text-gray-600 mt-2">Membership Application Form</h2>
+            <p class="text-sm text-gray-500 mt-1 italic">(This application form shall be completed in block letters)</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <form id="ipc-registration-form" class="space-y-8">
+            
+            <div class="form-section">
+                <h3 class="text-2xl font-bold brand-green border-b-2 border-yellow-500 pb-2 mb-6">1. Personal Information</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div><label class="block text-sm font-medium">Full Name <span class="text-red-500">*</span></label><input type="text" id="fullName" required class="mt-1 block w-full rounded-md border p-2 uppercase"></div>
+                    <div><label class="block text-sm font-medium">Date of Birth <span class="text-red-500">*</span></label><input type="date" id="dob" required class="mt-1 block w-full rounded-md border p-2"></div>
+                    <div><label class="block text-sm font-medium">Marital Status <span class="text-red-500">*</span></label>
+                        <select id="maritalStatus" required class="mt-1 block w-full rounded-md border p-2 uppercase">
+                            <option value="">SELECT...</option>
+                            <option value="SINGLE">SINGLE</option><option value="MARRIED">MARRIED</option><option value="DIVORCED">DIVORCED</option><option value="WIDOWED">WIDOWED</option>
+                        </select>
+                    </div>
+                    <div><label class="block text-sm font-medium">Telephone Number <span class="text-red-500">*</span></label><input type="tel" id="phone" required class="mt-1 block w-full rounded-md border p-2"></div>
+                    <div class="md:col-span-2"><label class="block text-sm font-medium">Email Address <span class="text-red-500">*</span></label><input type="email" id="email" required class="mt-1 block w-full rounded-md border p-2 uppercase"></div>
+                    <div class="md:col-span-2"><label class="block text-sm font-medium">Contact Address <span class="text-red-500">*</span></label><input type="text" id="contactAddress" required class="mt-1 block w-full rounded-md border p-2 uppercase"></div>
+                    <div class="md:col-span-2"><label class="block text-sm font-medium">Permanent Address <span class="text-red-500">*</span></label><textarea id="permanentAddress" required rows="2" class="mt-1 block w-full rounded-md border p-2 uppercase"></textarea></div>
+                    <div><label class="block text-sm font-medium">City/State/Country <span class="text-red-500">*</span></label><input type="text" id="cityState" required class="mt-1 block w-full rounded-md border p-2 uppercase"></div>
+                    <div><label class="block text-sm font-medium">Occupation <span class="text-red-500">*</span></label><input type="text" id="occupation" required class="mt-1 block w-full rounded-md border p-2 uppercase"></div>
+                    <div><label class="block text-sm font-medium">Employer/Business Name</label><input type="text" id="employer" class="mt-1 block w-full rounded-md border p-2 uppercase"></div>
+                    <div><label class="block text-sm font-medium">Nature of Business</label><input type="text" id="natureOfBusiness" class="mt-1 block w-full rounded-md border p-2 uppercase"></div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="text-2xl font-bold brand-green border-b-2 border-yellow-500 pb-2 mb-6">2. Family Information</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div><label class="block text-sm font-medium">Spouse’s Name</label><input type="text" id="spouseName" class="mt-1 block w-full rounded-md border p-2 uppercase"></div>
+                    <div><label class="block text-sm font-medium">Spouse’s Telephone</label><input type="tel" id="spousePhone" class="mt-1 block w-full rounded-md border p-2"></div>
+                </div>
+                
+                <h4 class="text-lg font-bold brand-green mt-6 mb-4">Children (Optional)</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-2">
+                    <div><input type="text" id="child1Name" placeholder="1. Name" class="mt-1 block w-full rounded-md border p-2 uppercase"></div>
+                    <div><input type="number" id="child1Age" placeholder="Age" class="mt-1 block w-full rounded-md border p-2"></div>
+                    <div><input type="text" id="child2Name" placeholder="2. Name" class="mt-1 block w-full rounded-md border p-2 uppercase"></div>
+                    <div><input type="number" id="child2Age" placeholder="Age" class="mt-1 block w-full rounded-md border p-2"></div>
+                    <div><input type="text" id="child3Name" placeholder="3. Name" class="mt-1 block w-full rounded-md border p-2 uppercase"></div>
+                    <div><input type="number" id="child3Age" placeholder="Age" class="mt-1 block w-full rounded-md border p-2"></div>
+                    <div><input type="text" id="child4Name" placeholder="4. Name" class="mt-1 block w-full rounded-md border p-2 uppercase"></div>
+                    <div><input type="number" id="child4Age" placeholder="Age" class="mt-1 block w-full rounded-md border p-2"></div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="text-2xl font-bold brand-green border-b-2 border-yellow-500 pb-2 mb-6">3. Alternate/Emergency Contact</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div><label class="block text-sm font-medium">Name <span class="text-red-500">*</span></label><input type="text" id="emergencyName" required class="mt-1 block w-full rounded-md border p-2 uppercase"></div>
+                    <div><label class="block text-sm font-medium">Relationship <span class="text-red-500">*</span></label><input type="text" id="emergencyRelation" required class="mt-1 block w-full rounded-md border p-2 uppercase"></div>
+                    <div><label class="block text-sm font-medium">Phone <span class="text-red-500">*</span></label><input type="tel" id="emergencyPhone" required class="mt-1 block w-full rounded-md border p-2"></div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="text-2xl font-bold brand-green border-b-2 border-yellow-500 pb-2 mb-6">4. Expected Contributions</h3>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium">Expected Contributions to the Club (Skills and areas of interest) <span class="text-red-500">*</span></label>
+                    <textarea id="expectedContributions" rows="4" required class="mt-1 block w-full rounded-md border p-2 uppercase"></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="text-2xl font-bold brand-green border-b-2 border-yellow-500 pb-2 mb-6">5. Sponsor's Recommendation</h3>
+                <div class="grid grid-cols-1 gap-6">
+                    <div><label class="block text-sm font-medium">Sponsor's Name <span class="text-red-500">*</span></label><input type="text" id="sponsorName" required class="mt-1 block w-full rounded-md border p-2 uppercase"></div>
+                    <div><label class="block text-sm font-medium">Sponsor's Comments <span class="text-red-500">*</span></label><textarea id="sponsorComments" required rows="3" class="mt-1 block w-full rounded-md border p-2 uppercase"></textarea></div>
+                    <div class="bg-gray-100 p-3 rounded text-sm text-gray-600">
+                        * By submitting this form, your sponsor will be verified by the membership committee.
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section bg-green-50 border-l-4 border-green-600">
+                <h3 class="text-2xl font-bold brand-green pb-2 mb-4">6. Payment & Document Uploads</h3>
+                
+                <div class="mb-6 p-4 bg-white rounded-md shadow-sm border border-green-200">
+                    <h4 class="font-bold text-gray-800 mb-2">NOTES:</h4>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2 text-sm">
+                        <li>Please attach <strong>2 recent passport-sized photographs</strong> below.</li>
+                        <li>On admission, a member shall pay:
+                            <ul class="list-circle pl-5 mt-1">
+                                <li>An admission fee of <strong>#150,000 (Naira)</strong></li>
+                                <li>Current annual membership fee of <strong>#100,000 (Naira)</strong></li>
+                            </ul>
+                        </li>
+                        <li>The above fees of total <strong>#250,000 (Naira)</strong> shall be fully payable into <strong>ILUPEJU PATRIOTIC CLUB</strong> bank account <strong>1100143348</strong> at <strong>Omiye Bank</strong> within 2 weeks of notice of your successful membership admission.</li>
+                    </ul>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium">Upload Payment Receipt <span class="text-red-500">*</span></label>
+                        <input type="file" id="receipt" required accept="image/jpeg, image/png, application/pdf" class="mt-2 block w-full text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium">Passport Photograph 1 <span class="text-red-500">*</span></label>
+                        <input type="file" id="passport1" required accept="image/jpeg, image/png" class="mt-2 block w-full text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium">Passport Photograph 2 <span class="text-red-500">*</span></label>
+                        <input type="file" id="passport2" required accept="image/jpeg, image/png" class="mt-2 block w-full text-sm">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h3 class="text-2xl font-bold brand-green border-b-2 border-yellow-500 pb-2 mb-6">7. Declaration</h3>
+                <div class="flex items-start mb-4">
+                    <div class="flex items-center h-5">
+                        <input id="declaration" type="checkbox" required class="focus:ring-green-500 h-4 w-4 text-green-600 border-gray-300 rounded">
+                    </div>
+                    <div class="ml-3 text-sm">
+                        <p class="text-gray-700 font-medium">I certify that the information I have provided on this form are true and correct, and I agree to abide by the Constitution, By-Laws, rules, and values of the Ilupeju Patriotic Club if admitted.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                    <div>
+                        <label class="block text-sm font-medium">Digital Signature (Type Full Name) <span class="text-red-500">*</span></label>
+                        <input type="text" id="digitalSignature" required placeholder="Applicant Signature" class="mt-1 block w-full rounded-md border p-2 uppercase">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium">Date</label>
+                        <input type="text" id="displayDate" disabled class="mt-1 block w-full rounded-md border p-2 bg-gray-100 cursor-not-allowed">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section text-center">
+                <button type="submit" class="bg-brand-green text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition duration-300 text-lg w-full md:w-auto">Submit Application</button>
+            </div>
+        </form>
+
+        <div id="success-message" class="hidden form-section text-center bg-green-100 border-green-500 border-2 mt-8">
+            <h2 class="text-2xl font-bold text-green-800 mb-2">Application Submitted Successfully!</h2>
+            <p class="text-lg text-green-700">Your payment will be confirmed and you will be informed on the next step shortly.</p>
+        </div>
+    </main>
+
+    <script>
+        // Your newly generated Web App URL is correctly placed here
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx9_ETMe0tA14t4XzkrtwMLQDF43fXjKJRJOLmiXNMJAA0r1QxpUnNhCWTaV8XjAqg/exec'; 
+
+        // Auto-fill today's date for the signature
+        document.getElementById('displayDate').value = new Date().toLocaleDateString();
+
+        document.getElementById('ipc-registration-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const receiptFile = document.getElementById('receipt').files[0];
+            const passport1File = document.getElementById('passport1').files[0];
+            const passport2File = document.getElementById('passport2').files[0];
+
+            // 2MB File Size Limit Check
+            const maxSize = 2 * 1024 * 1024; 
+            if ((receiptFile && receiptFile.size > maxSize) || (passport1File && passport1File.size > maxSize) || (passport2File && passport2File.size > maxSize)) {
+                alert("File size exceeds 2MB limit. Please upload a smaller file.");
+                return;
+            }
+
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            submitBtn.innerText = "Uploading... Please wait (This may take a moment)";
+            submitBtn.disabled = true;
+
+            const getBase64 = (file) => new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => resolve({ name: file.name, mime: file.type, data: reader.result.split(',')[1] });
+                reader.onerror = error => reject(error);
+            });
+
+            try {
+                let payload = {
+                    fullName: document.getElementById('fullName').value,
+                    dob: document.getElementById('dob').value,
+                    maritalStatus: document.getElementById('maritalStatus').value,
+                    phone: document.getElementById('phone').value,
+                    email: document.getElementById('email').value,
+                    contactAddress: document.getElementById('contactAddress').value,
+                    permanentAddress: document.getElementById('permanentAddress').value,
+                    cityState: document.getElementById('cityState').value,
+                    occupation: document.getElementById('occupation').value,
+                    employer: document.getElementById('employer').value,
+                    natureOfBusiness: document.getElementById('natureOfBusiness').value,
+                    spouseName: document.getElementById('spouseName').value,
+                    spousePhone: document.getElementById('spousePhone').value,
+                    child1Name: document.getElementById('child1Name').value,
+                    child1Age: document.getElementById('child1Age').value,
+                    child2Name: document.getElementById('child2Name').value,
+                    child2Age: document.getElementById('child2Age').value,
+                    child3Name: document.getElementById('child3Name').value,
+                    child3Age: document.getElementById('child3Age').value,
+                    child4Name: document.getElementById('child4Name').value,
+                    child4Age: document.getElementById('child4Age').value,
+                    emergencyName: document.getElementById('emergencyName').value,
+                    emergencyRelation: document.getElementById('emergencyRelation').value,
+                    emergencyPhone: document.getElementById('emergencyPhone').value,
+                    expectedContributions: document.getElementById('expectedContributions').value,
+                    sponsorName: document.getElementById('sponsorName').value,
+                    sponsorComments: document.getElementById('sponsorComments').value
+                };
+
+                if (receiptFile) {
+                    const rData = await getBase64(receiptFile);
+                    payload.receiptName = rData.name; payload.receiptMime = rData.mime; payload.receiptData = rData.data;
+                }
+                if (passport1File) {
+                    const p1Data = await getBase64(passport1File);
+                    payload.passport1Name = p1Data.name; payload.passport1Mime = p1Data.mime; payload.passport1Data = p1Data.data;
+                }
+                if (passport2File) {
+                    const p2Data = await getBase64(passport2File);
+                    payload.passport2Name = p2Data.name; payload.passport2Mime = p2Data.mime; payload.passport2Data = p2Data.data;
+                }
+
+                const response = await fetch(scriptURL, { 
+                    method: 'POST', 
+                    body: JSON.stringify(payload) 
+                });
+                const result = await response.json();
+
+                if (result.status === 'success') {
+                    document.getElementById('ipc-registration-form').classList.add('hidden');
+                    document.getElementById('success-message').classList.remove('hidden');
+                    window.scrollTo(0,0);
+                } else {
+                    alert("Error: " + result.message);
+                    submitBtn.innerText = "Submit Application";
+                    submitBtn.disabled = false;
+                }
+            } catch (error) {
+                console.error('Error!', error.message);
+                alert("An error occurred. Please check your connection and try again.");
+                submitBtn.innerText = "Submit Application";
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
