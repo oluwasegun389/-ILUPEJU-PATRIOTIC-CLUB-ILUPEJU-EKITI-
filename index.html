@@ -42,7 +42,7 @@
         <div class="max-w-4xl mx-auto px-4 flex flex-col items-center justify-center">
             <h1 class="text-2xl md:text-4xl brand-green uppercase tracking-wide font-black mb-3" style="font-weight: 900; letter-spacing: 0.05em;">Ilupeju Patriotic Club</h1>
             
-            <p class="text-sm text-gray-600 font-semibold mb-1">📞 +2348052085396</p>
+            <p class="text-sm text-gray-600 font-semibold mb-1">📞 +2348052085396 </p>
             <p class="text-sm text-gray-600 mb-1">📍 20B Apata-Aje Street, Ilupeju-Ekiti, Ekiti State</p>
             <p class="text-sm mb-3"><a href="#" class="text-blue-600 font-medium hover:underline">https://ilupejupatrioticclub.gov</a></p>
 
@@ -181,7 +181,7 @@
     </main>
 
     <script>
-        // Updated to the user's newest Web App Deployment URL
+        // Updated to the user's latest Web App Deployment URL
         const scriptURL = 'https://script.google.com/macros/s/AKfycbyiLXryGgp8nrgTGav7msToRpgT1v1kFKMep2Tkpf0UdhDfAq9AfSLyv5qxahoklZdT_A/exec'; 
 
         function viewId(id) { return document.getElementById(id); }
@@ -199,7 +199,7 @@
             reader.onerror = error => reject(error);
         });
 
-        // 1. Handle Registration Submission (Includes Child Inputs)
+        // 1. Handle Registration Submission (With Loading Indicator & Disabled State)
         viewId('ipc-registration-form').addEventListener('submit', async function(e) {
             e.preventDefault();
             const passportFile = viewId('passport').files[0];
@@ -208,8 +208,9 @@
 
             const btn = e.target.querySelector('button[type="submit"]');
             const originalText = btn.innerText;
-            btn.innerText = "Submitting Application..."; 
+            btn.innerText = "Processing & Uploading Passport... Please wait ⏳"; 
             btn.disabled = true;
+            btn.classList.add('opacity-75', 'cursor-not-allowed');
 
             try {
                 let payload = {
@@ -259,15 +260,17 @@
                     alert("Error: " + result.message); 
                     btn.innerText = originalText; 
                     btn.disabled = false; 
+                    btn.classList.remove('opacity-75', 'cursor-not-allowed');
                 }
             } catch (err) { 
                 alert("Network error. Please check your connection and try again."); 
                 btn.innerText = originalText; 
                 btn.disabled = false; 
+                btn.classList.remove('opacity-75', 'cursor-not-allowed');
             }
         });
 
-        // 2. Handle Receipt Upload Submission
+        // 2. Handle Receipt Upload Submission (With Loading Indicator & Disabled State)
         viewId('receipt-upload-form').addEventListener('submit', async function(e) {
             e.preventDefault();
             const file = viewId('finalReceipt').files[0];
@@ -276,8 +279,9 @@
 
             const btn = e.target.querySelector('button[type="submit"]');
             const originalText = btn.innerText;
-            btn.innerText = "Uploading Receipt..."; 
+            btn.innerText = "Uploading Receipt & Notifying Finance... Please wait ⏳"; 
             btn.disabled = true;
+            btn.classList.add('opacity-75', 'cursor-not-allowed');
 
             try {
                 const rData = await getBase64(file);
@@ -295,15 +299,20 @@
                 if (result.status === 'success') {
                     viewId('receipt-success').classList.remove('hidden');
                     viewId('receipt-upload-form').reset();
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                    btn.classList.remove('opacity-75', 'cursor-not-allowed');
                 } else { 
                     alert("Error: " + result.message); 
                     btn.innerText = originalText; 
                     btn.disabled = false; 
+                    btn.classList.remove('opacity-75', 'cursor-not-allowed');
                 }
             } catch (err) { 
                 alert("Network error. Please check your connection and try again."); 
                 btn.innerText = originalText; 
                 btn.disabled = false; 
+                btn.classList.remove('opacity-75', 'cursor-not-allowed');
             }
         });
     </script>
