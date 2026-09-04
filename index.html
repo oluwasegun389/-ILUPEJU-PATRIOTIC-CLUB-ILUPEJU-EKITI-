@@ -42,7 +42,7 @@
         <div class="max-w-4xl mx-auto px-4 flex flex-col items-center justify-center">
             <h1 class="text-2xl md:text-4xl brand-green uppercase tracking-wide font-black mb-3" style="font-weight: 900; letter-spacing: 0.05em;">Ilupeju Patriotic Club</h1>
             
-            <p class="text-sm text-gray-600 font-semibold mb-1">📞 +2348052085396 </p>
+            <p class="text-sm text-gray-600 font-semibold mb-1">📞 +2348052085396</p>
             <p class="text-sm text-gray-600 mb-1">📍 20B Apata-Aje Street, Ilupeju-Ekiti, Ekiti State</p>
             <p class="text-sm mb-3"><a href="#" class="text-blue-600 font-medium hover:underline">https://ilupejupatrioticclub.gov</a></p>
 
@@ -181,7 +181,8 @@
     </main>
 
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbx2dFnnR2bbXCv-zCQlSk7heVHFbEedRlPA510W300gz8huG4CvLBbvMwuNrNGTqONh/exec'; 
+        // Updated to the user's newest Web App Deployment URL
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyiLXryGgp8nrgTGav7msToRpgT1v1kFKMep2Tkpf0UdhDfAq9AfSLyv5qxahoklZdT_A/exec'; 
 
         function viewId(id) { return document.getElementById(id); }
 
@@ -202,7 +203,8 @@
         viewId('ipc-registration-form').addEventListener('submit', async function(e) {
             e.preventDefault();
             const passportFile = viewId('passport').files[0];
-            if (passportFile && passportFile.size > 10 * 1024 * 1024) { alert("Passport file exceeds 10MB limit."); return; }
+            if (!passportFile) { alert("Please attach a passport photograph."); return; }
+            if (passportFile.size > 10 * 1024 * 1024) { alert("Passport file exceeds 10MB limit."); return; }
 
             const btn = e.target.querySelector('button[type="submit"]');
             const originalText = btn.innerText;
@@ -241,10 +243,10 @@
                     sponsorComments: viewId('sponsorComments').value
                 };
 
-                if (passportFile) {
-                    const pData = await getBase64(passportFile);
-                    payload.passportName = pData.name; payload.passportMime = pData.mime; payload.passportData = pData.data;
-                }
+                const pData = await getBase64(passportFile);
+                payload.passportName = pData.name; 
+                payload.passportMime = pData.mime; 
+                payload.passportData = pData.data;
 
                 const response = await fetch(scriptURL, { method: 'POST', body: JSON.stringify(payload) });
                 const result = await response.json();
