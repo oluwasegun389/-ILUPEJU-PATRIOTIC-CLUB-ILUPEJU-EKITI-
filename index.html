@@ -22,25 +22,25 @@
             box-shadow: 0 4px 20px -2px rgba(0, 77, 0, 0.08);
         }
         .logo-emblem {
-            width: 110px;
-            height: 110px;
+            width: 75px;
+            height: 75px;
             object-fit: contain;
             border-radius: 50%;
-            border: 3px solid #eab308;
-            box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.15);
+            border: 2px solid #eab308;
+            box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.12);
             background: #ffffff;
-            padding: 4px;
+            padding: 3px;
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .logo-emblem:hover {
-            transform: scale(1.04);
-            box-shadow: 0 10px 20px -4px rgba(0, 77, 0, 0.25);
+            transform: scale(1.05);
+            box-shadow: 0 6px 14px -3px rgba(0, 77, 0, 0.2);
         }
         @media (min-width: 768px) {
             .logo-emblem {
-                width: 130px;
-                height: 130px;
+                width: 90px;
+                height: 90px;
             }
         }
         .form-section { 
@@ -76,29 +76,29 @@
 
     <!-- EXECUTIVE INSTITUTIONAL HEADER -->
     <header class="institution-header w-full mb-10 sticky top-0 z-50">
-        <div class="max-w-4xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
             
-            <!-- Left: Clickable Official Seal / Logo -->
-            <div class="flex-shrink-0 flex items-center justify-center">
+            <!-- Left: Standalone Clickable Official Logo -->
+            <div class="flex-shrink-0 flex items-center">
                 <img src="HEADER ipc.jpg" alt="Ilupeju Patriotic Club Emblem" class="logo-emblem" onclick="switchView('view-form')" title="Click to go to Home/Registration Page">
             </div>
 
-            <!-- Center: Club Identity & Credentials -->
-            <div class="flex-grow cursor-pointer" onclick="switchView('view-form')">
-                <span class="inline-block px-3 py-1 mb-1 text-[11px] font-bold tracking-widest uppercase bg-yellow-100 text-yellow-800 rounded-full border border-yellow-300">
+            <!-- Center: Bold Broad Club Title & Credentials (As requested, cleanly centered) -->
+            <div class="flex-grow flex flex-col items-center justify-center text-center">
+                <span class="inline-block px-3 py-0.5 mb-1 text-[10px] font-bold tracking-widest uppercase bg-yellow-100 text-yellow-800 rounded-full border border-yellow-300">
                     Official Membership Portal
                 </span>
-                <h1 class="text-xl md:text-3xl brand-green uppercase tracking-wide font-black" style="letter-spacing: 0.04em;">Ilupeju Patriotic Club</h1>
-                <div class="mt-1 flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-1 text-xs text-gray-600 font-medium">
-                    <span class="flex items-center">📍 20B Apata-Aje Street, Ilupeju-Ekiti, Ekiti State</span>
-                    <span class="flex items-center">📞 +2348052085396, +2348033020035</span>
+                <h1 class="text-2xl md:text-3xl brand-green uppercase tracking-wide font-black" style="font-weight: 900; letter-spacing: 0.04em;">Ilupeju Patriotic Club</h1>
+                <div class="mt-1 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-gray-600 font-medium">
+                    <span>📍 20B Apata-Aje Street, Ilupeju-Ekiti, Ekiti State</span>
+                    <span>📞 +2348052085396, +2348033020035</span>
                 </div>
                 <div class="mt-1">
-                    <a href="https://ilupejupatrioticclub.gov" target="_blank" class="text-xs text-blue-600 font-semibold hover:underline" onclick="event.stopPropagation()">https://ilupejupatrioticclub.gov</a>
+                    <a href="https://ilupejupatrioticclub.gov" target="_blank" class="text-xs text-blue-600 font-semibold hover:underline">https://ilupejupatrioticclub.gov</a>
                 </div>
             </div>
 
-            <!-- Right: Support Action -->
+            <!-- Right: WhatsApp Support Button -->
             <div class="flex-shrink-0">
                 <a href="https://wa.me/13013435551" target="_blank" class="inline-flex items-center bg-emerald-600 text-white text-xs font-bold py-2.5 px-4 rounded-xl shadow-sm hover:bg-emerald-700 transition duration-200">
                     <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
