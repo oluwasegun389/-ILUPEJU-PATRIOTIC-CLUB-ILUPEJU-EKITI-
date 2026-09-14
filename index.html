@@ -3,66 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPC Membership Portal</title>
+    <title>IPC Membership Portal | Ilupeju Patriotic Club</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        :root {
+            --brand-green: #004d00;
+            --brand-gold: #c5a059;
+            --brand-dark: #0f172a;
+        }
         body { 
-            background-color: #f3f4f6;
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, #f0fdf4 0%, #f3f4f6 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+        }
+        .institution-header {
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            border-bottom: 3px solid #eab308;
+            box-shadow: 0 4px 20px -2px rgba(0, 77, 0, 0.08);
+        }
+        .logo-emblem {
+            width: 110px;
+            height: 110px;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 3px solid #eab308;
+            box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.15);
+            background: #ffffff;
+            padding: 4px;
+        }
+        @media (min-width: 768px) {
+            .logo-emblem {
+                width: 130px;
+                height: 130px;
+            }
         }
         .form-section { 
-            background: rgba(255, 255, 255, 0.96); 
-            padding: 2.5rem; 
+            background: #ffffff; 
+            padding: 2.25rem; 
             border-radius: 1rem; 
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05); 
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.06), 0 4px 6px -4px rgba(0, 0, 0, 0.03); 
             margin-bottom: 2rem; 
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(229, 231, 235, 0.8);
+            border: 1px solid rgba(229, 231, 235, 0.9);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .form-section:hover {
+            box-shadow: 0 20px 35px -12px rgba(0, 77, 0, 0.08);
         }
         .brand-green { color: #004d00; }
         .bg-brand-green { background-color: #004d00; }
         .bg-brand-green:hover { background-color: #003300; }
         .req-star { color: #dc2626; font-weight: 700; }
-        input, select, textarea { transition: all 0.2s ease-in-out; }
+        input, select, textarea { 
+            transition: all 0.2s ease-in-out;
+            background-color: #fafafa;
+        }
         input:focus, select:focus, textarea:focus {
             outline: none;
+            background-color: #ffffff;
             border-color: #004d00;
-            box-shadow: 0 0 0 3px rgba(0, 77, 0, 0.15);
+            box-shadow: 0 0 0 4px rgba(0, 77, 0, 0.1);
         }
         .hidden-view { display: none; }
     </style>
 </head>
 <body class="antialiased text-gray-800">
 
-    <!-- Responsive & Balanced Header -->
-    <header class="w-full mb-10 shadow-lg bg-white border-b-4 border-yellow-500">
-        <!-- Banner Image Container: Preserves full aspect ratio cleanly across mobile & desktop -->
-        <div class="w-full bg-black/90 flex justify-center">
-            <div class="max-w-4xl w-full">
-                <img src="HEADER ipc.jpg" alt="Ilupeju Patriotic Club Header" class="w-full h-auto block mx-auto object-contain">
-            </div>
-        </div>
-
-        <div class="max-w-4xl mx-auto px-4 flex flex-col items-center justify-center py-6 text-center">
-            <h1 class="text-2xl md:text-4xl brand-green uppercase tracking-wide font-black mb-3" style="font-weight: 900; letter-spacing: 0.05em;">Ilupeju Patriotic Club</h1>
+    <!-- EXECUTIVE INSTITUTIONAL HEADER -->
+    <header class="institution-header w-full mb-10 sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
             
-            <p class="text-sm text-gray-600 font-semibold mb-1">📞 +2348052085396, +2348033020035</p>
-            <p class="text-sm text-gray-600 mb-1">📍 20B Apata-Aje Street, Ilupeju-Ekiti, Ekiti State</p>
-            <p class="text-sm mb-4"><a href="https://ilupejupatrioticclub.gov" target="_blank" class="text-blue-600 font-medium hover:underline">https://ilupejupatrioticclub.gov</a></p>
+            <!-- Left: Official Seal / Logo -->
+            <div class="flex-shrink-0 flex items-center justify-center">
+                <img src="HEADER ipc.jpg" alt="Ilupeju Patriotic Club Emblem" class="logo-emblem">
+            </div>
 
-            <div class="mb-4">
-                <a href="https://wa.me/13013435551" target="_blank" class="inline-flex items-center bg-emerald-600 text-white text-xs font-bold py-2.5 px-6 rounded-full shadow-md hover:bg-emerald-700 transition duration-300 transform hover:-translate-y-0.5">
+            <!-- Center: Club Identity & Credentials -->
+            <div class="flex-grow">
+                <span class="inline-block px-3 py-1 mb-1 text-[11px] font-bold tracking-widest uppercase bg-yellow-100 text-yellow-800 rounded-full border border-yellow-300">
+                    Official Membership Portal
+                </span>
+                <h1 class="text-xl md:text-3xl brand-green uppercase tracking-wide font-black" style="letter-spacing: 0.04em;">Ilupeju Patriotic Club</h1>
+                <div class="mt-1 flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-1 text-xs text-gray-600 font-medium">
+                    <span class="flex items-center">📍 20B Apata-Aje Street, Ilupeju-Ekiti, Ekiti State</span>
+                    <span class="flex items-center">📞 +2348052085396, +2348033020035</span>
+                </div>
+                <div class="mt-1">
+                    <a href="https://ilupejupatrioticclub.gov" target="_blank" class="text-xs text-blue-600 font-semibold hover:underline">https://ilupejupatrioticclub.gov</a>
+                </div>
+            </div>
+
+            <!-- Right: Support Action -->
+            <div class="flex-shrink-0">
+                <a href="https://wa.me/13013435551" target="_blank" class="inline-flex items-center bg-emerald-600 text-white text-xs font-bold py-2.5 px-4 rounded-xl shadow-sm hover:bg-emerald-700 transition duration-200">
                     <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                     </svg>
-                    Chat with Support on WhatsApp
+                    WhatsApp Support
                 </a>
             </div>
 
-            <h2 class="text-base font-bold uppercase text-gray-600 mt-2 tracking-wider border-t pt-3 w-full">Membership Application Portal</h2>
         </div>
     </header>
 
@@ -70,92 +109,124 @@
 
         <!-- ================= PAGE 1: REGISTRATION FORM ================= -->
         <section id="view-form" class="view-container">
-            <form id="ipc-registration-form" class="space-y-8">
+            <form id="ipc-registration-form" class="space-y-6">
                 
                 <!-- 1. Personal Information -->
                 <div class="form-section">
-                    <h3 class="text-xl font-bold brand-green border-b-2 border-yellow-500 pb-2 mb-6 flex items-center justify-between">
-                        <span>1. Personal Information</span>
-                        <span class="text-xs font-normal text-red-600">* Indicates required fields</span>
-                    </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div><label class="block text-sm font-medium text-gray-700">Full Name <span class="req-star">*</span></label><input type="text" id="fullName" required class="mt-1 block w-full rounded-md border-gray-300 border p-2.5 uppercase bg-gray-50/50"></div>
-                        <div><label class="block text-sm font-medium text-gray-700">Date of Birth <span class="req-star">*</span></label><input type="date" id="dob" required class="mt-1 block w-full rounded-md border-gray-300 border p-2.5 bg-gray-50/50"></div>
-                        <div><label class="block text-sm font-medium text-gray-700">Marital Status <span class="req-star">*</span></label>
-                            <select id="maritalStatus" required class="mt-1 block w-full rounded-md border-gray-300 border p-2.5 uppercase bg-gray-50/50">
-                                <option value="">SELECT...</option>
-                                <option value="SINGLE">SINGLE</option><option value="MARRIED">MARRIED</option><option value="DIVORCED">DIVORCED</option><option value="WIDOWED">WIDOWED</option>
+                    <div class="flex items-center justify-between border-b-2 border-yellow-500 pb-3 mb-6">
+                        <h3 class="text-lg md:text-xl font-bold brand-green flex items-center">
+                            <span class="bg-green-900 text-white text-xs w-6 h-6 rounded-full inline-flex items-center justify-center mr-2.5">1</span>
+                            Personal Information
+                        </h3>
+                        <span class="text-xs font-semibold text-red-600 bg-red-50 px-2.5 py-1 rounded-md border border-red-100">* Required fields</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Full Name <span class="req-star">*</span></label><input type="text" id="fullName" required class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Date of Birth <span class="req-star">*</span></label><input type="date" id="dob" required class="w-full rounded-lg border-gray-300 border p-3 text-sm"></div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Marital Status <span class="req-star">*</span></label>
+                            <select id="maritalStatus" required class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm">
+                                <option value="">SELECT STATUS...</option>
+                                <option value="SINGLE">SINGLE</option>
+                                <option value="MARRIED">MARRIED</option>
+                                <option value="DIVORCED">DIVORCED</option>
+                                <option value="WIDOWED">WIDOWED</option>
                             </select>
                         </div>
-                        <div><label class="block text-sm font-medium text-gray-700">Telephone Number <span class="req-star">*</span></label><input type="tel" id="phone" required class="mt-1 block w-full rounded-md border-gray-300 border p-2.5 bg-gray-50/50"></div>
-                        <div class="md:col-span-2"><label class="block text-sm font-medium text-gray-700">Email Address <span class="req-star">*</span> <span class="text-xs text-gray-500 font-normal">(Used for tracking application status)</span></label><input type="email" id="email" required class="mt-1 block w-full rounded-md border-gray-300 border p-2.5 uppercase bg-gray-50/50"></div>
-                        <div class="md:col-span-2"><label class="block text-sm font-medium text-gray-700">Contact Address <span class="req-star">*</span></label><input type="text" id="contactAddress" required class="mt-1 block w-full rounded-md border-gray-300 border p-2.5 uppercase bg-gray-50/50"></div>
-                        <div class="md:col-span-2"><label class="block text-sm font-medium text-gray-700">Permanent Address <span class="req-star">*</span></label><textarea id="permanentAddress" required rows="2" class="mt-1 block w-full rounded-md border-gray-300 border p-2.5 uppercase bg-gray-50/50"></textarea></div>
-                        <div><label class="block text-sm font-medium text-gray-700">City/State/Country <span class="req-star">*</span></label><input type="text" id="cityState" required class="mt-1 block w-full rounded-md border-gray-300 border p-2.5 uppercase bg-gray-50/50"></div>
-                        <div><label class="block text-sm font-medium text-gray-700">Occupation <span class="req-star">*</span></label><input type="text" id="occupation" required class="mt-1 block w-full rounded-md border-gray-300 border p-2.5 uppercase bg-gray-50/50"></div>
-                        <div><label class="block text-sm font-medium text-gray-700">Employer/Business Name</label><input type="text" id="employer" class="mt-1 block w-full rounded-md border-gray-300 border p-2.5 uppercase bg-gray-50/50"></div>
-                        <div><label class="block text-sm font-medium text-gray-700">Nature of Business</label><input type="text" id="natureOfBusiness" class="mt-1 block w-full rounded-md border-gray-300 border p-2.5 uppercase bg-gray-50/50"></div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Telephone Number <span class="req-star">*</span></label><input type="tel" id="phone" required class="w-full rounded-lg border-gray-300 border p-3 text-sm"></div>
+                        <div class="md:col-span-2"><label class="block text-sm font-semibold text-gray-700 mb-1.5">Email Address <span class="req-star">*</span> <span class="text-xs text-gray-500 font-normal">(Used for tracking application status)</span></label><input type="email" id="email" required class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
+                        <div class="md:col-span-2"><label class="block text-sm font-semibold text-gray-700 mb-1.5">Contact Address <span class="req-star">*</span></label><input type="text" id="contactAddress" required class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
+                        <div class="md:col-span-2"><label class="block text-sm font-semibold text-gray-700 mb-1.5">Permanent Address <span class="req-star">*</span></label><textarea id="permanentAddress" required rows="2" class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></textarea></div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">City/State/Country <span class="req-star">*</span></label><input type="text" id="cityState" required class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Occupation <span class="req-star">*</span></label><input type="text" id="occupation" required class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Employer/Business Name</label><input type="text" id="employer" class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Nature of Business</label><input type="text" id="natureOfBusiness" class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
                     </div>
                 </div>
 
                 <!-- 2. Family & Emergency Info (Includes Children) -->
                 <div class="form-section">
-                    <h3 class="text-xl font-bold brand-green border-b-2 border-yellow-500 pb-2 mb-6">2. Family & Emergency Info</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <div><label class="block text-sm font-medium text-gray-700">Spouse’s Name</label><input type="text" id="spouseName" class="mt-1 block w-full rounded-md border-gray-300 border p-2.5 uppercase bg-gray-50/50"></div>
-                        <div><label class="block text-sm font-medium text-gray-700">Spouse’s Telephone</label><input type="tel" id="spousePhone" class="mt-1 block w-full rounded-md border-gray-300 border p-2.5 bg-gray-50/50"></div>
-                    </div>
-                    
-                    <h4 class="text-md font-bold text-gray-800 mb-3">Children Information (Optional)</h4>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 bg-gray-50 p-4 rounded-lg border border-gray-200">
-                        <div><input type="text" id="child1Name" placeholder="1. Child Full Name" class="mt-1 block w-full rounded-md border-gray-300 border p-2 uppercase bg-white text-sm"></div>
-                        <div><input type="number" id="child1Age" placeholder="Child 1 Age" class="mt-1 block w-full rounded-md border-gray-300 border p-2 bg-white text-sm"></div>
-                        <div><input type="text" id="child2Name" placeholder="2. Child Full Name" class="mt-1 block w-full rounded-md border-gray-300 border p-2 uppercase bg-white text-sm"></div>
-                        <div><input type="number" id="child2Age" placeholder="Child 2 Age" class="mt-1 block w-full rounded-md border-gray-300 border p-2 bg-white text-sm"></div>
-                        <div><input type="text" id="child3Name" placeholder="3. Child Full Name" class="mt-1 block w-full rounded-md border-gray-300 border p-2 uppercase bg-white text-sm"></div>
-                        <div><input type="number" id="child3Age" placeholder="Child 3 Age" class="mt-1 block w-full rounded-md border-gray-300 border p-2 bg-white text-sm"></div>
-                        <div><input type="text" id="child4Name" placeholder="4. Child Full Name" class="mt-1 block w-full rounded-md border-gray-300 border p-2 uppercase bg-white text-sm"></div>
-                        <div><input type="number" id="child4Age" placeholder="Child 4 Age" class="mt-1 block w-full rounded-md border-gray-300 border p-2 bg-white text-sm"></div>
+                    <div class="border-b-2 border-yellow-500 pb-3 mb-6">
+                        <h3 class="text-lg md:text-xl font-bold brand-green flex items-center">
+                            <span class="bg-green-900 text-white text-xs w-6 h-6 rounded-full inline-flex items-center justify-center mr-2.5">2</span>
+                            Family & Emergency Info
+                        </h3>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
-                        <div><label class="block text-sm font-medium text-gray-700">Emergency Contact Name <span class="req-star">*</span></label><input type="text" id="emergencyName" required class="mt-1 block w-full rounded-md border-gray-300 border p-2.5 uppercase bg-gray-50/50"></div>
-                        <div><label class="block text-sm font-medium text-gray-700">Relationship <span class="req-star">*</span></label><input type="text" id="emergencyRelation" required class="mt-1 block w-full rounded-md border-gray-300 border p-2.5 uppercase bg-gray-50/50"></div>
-                        <div><label class="block text-sm font-medium text-gray-700">Phone <span class="req-star">*</span></label><input type="tel" id="emergencyPhone" required class="mt-1 block w-full rounded-md border-gray-300 border p-2.5 bg-gray-50/50"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Spouse’s Name</label><input type="text" id="spouseName" class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Spouse’s Telephone</label><input type="tel" id="spousePhone" class="w-full rounded-lg border-gray-300 border p-3 text-sm"></div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="text-sm font-bold text-gray-700 uppercase tracking-wider mb-3">Children Information (Optional)</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50/80 p-4 rounded-xl border border-gray-200">
+                            <div><input type="text" id="child1Name" placeholder="1. Child Full Name" class="w-full rounded-lg border-gray-300 border p-2.5 uppercase bg-white text-sm"></div>
+                            <div><input type="number" id="child1Age" placeholder="Child 1 Age" class="w-full rounded-lg border-gray-300 border p-2.5 bg-white text-sm"></div>
+                            <div><input type="text" id="child2Name" placeholder="2. Child Full Name" class="w-full rounded-lg border-gray-300 border p-2.5 uppercase bg-white text-sm"></div>
+                            <div><input type="number" id="child2Age" placeholder="Child 2 Age" class="w-full rounded-lg border-gray-300 border p-2.5 bg-white text-sm"></div>
+                            <div><input type="text" id="child3Name" placeholder="3. Child Full Name" class="w-full rounded-lg border-gray-300 border p-2.5 uppercase bg-white text-sm"></div>
+                            <div><input type="number" id="child3Age" placeholder="Child 3 Age" class="w-full rounded-lg border-gray-300 border p-2.5 bg-white text-sm"></div>
+                            <div><input type="text" id="child4Name" placeholder="4. Child Full Name" class="w-full rounded-lg border-gray-300 border p-2.5 uppercase bg-white text-sm"></div>
+                            <div><input type="number" id="child4Age" placeholder="Child 4 Age" class="w-full rounded-lg border-gray-300 border p-2.5 bg-white text-sm"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Emergency Contact Name <span class="req-star">*</span></label><input type="text" id="emergencyName" required class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Relationship <span class="req-star">*</span></label><input type="text" id="emergencyRelation" required class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Phone <span class="req-star">*</span></label><input type="tel" id="emergencyPhone" required class="w-full rounded-lg border-gray-300 border p-3 text-sm"></div>
                     </div>
                 </div>
 
                 <!-- 3. Expected Contributions -->
                 <div class="form-section">
-                    <h3 class="text-xl font-bold brand-green border-b-2 border-yellow-500 pb-2 mb-6">3. Expected Contributions</h3>
+                    <div class="border-b-2 border-yellow-500 pb-3 mb-6">
+                        <h3 class="text-lg md:text-xl font-bold brand-green flex items-center">
+                            <span class="bg-green-900 text-white text-xs w-6 h-6 rounded-full inline-flex items-center justify-center mr-2.5">3</span>
+                            Expected Contributions
+                        </h3>
+                    </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Expected Contributions to the Club (Skills and areas of interest) <span class="req-star">*</span></label>
-                        <textarea id="expectedContributions" rows="3" required class="mt-1 block w-full rounded-md border-gray-300 border p-2.5 uppercase bg-gray-50/50"></textarea>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1.5">Expected Contributions to the Club (Skills and areas of interest) <span class="req-star">*</span></label>
+                        <textarea id="expectedContributions" rows="3" required class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></textarea>
                     </div>
                 </div>
 
                 <!-- 4. Sponsor Recommendation (Optional) -->
                 <div class="form-section">
-                    <h3 class="text-xl font-bold brand-green border-b-2 border-yellow-500 pb-2 mb-6">4. Sponsor Recommendation (Optional)</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div><label class="block text-sm font-medium text-gray-700">Sponsor's Name</label><input type="text" id="sponsorName" class="mt-1 block w-full rounded-md border-gray-300 border p-2.5 uppercase bg-gray-50/50"></div>
-                        <div><label class="block text-sm font-medium text-gray-700">Sponsor's Comments / Recommendation</label><textarea id="sponsorComments" rows="2" class="mt-1 block w-full rounded-md border-gray-300 border p-2.5 uppercase bg-gray-50/50"></textarea></div>
+                    <div class="border-b-2 border-yellow-500 pb-3 mb-6">
+                        <h3 class="text-lg md:text-xl font-bold brand-green flex items-center">
+                            <span class="bg-green-900 text-white text-xs w-6 h-6 rounded-full inline-flex items-center justify-center mr-2.5">4</span>
+                            Sponsor Recommendation <span class="text-xs font-normal text-gray-500 ml-2">(Optional)</span>
+                        </h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Sponsor's Name</label><input type="text" id="sponsorName" class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Sponsor's Comments / Recommendation</label><textarea id="sponsorComments" rows="2" class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></textarea></div>
                     </div>
                 </div>
 
                 <!-- 5. Passport Photograph Upload -->
                 <div class="form-section">
-                    <h3 class="text-xl font-bold brand-green border-b-2 border-yellow-500 pb-2 mb-6">5. Passport Photograph Upload</h3>
-                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                        <label class="block text-sm font-medium text-gray-700">Upload Passport Photograph <span class="req-star">*</span> <span class="text-xs text-gray-500 font-normal">(JPEG/PNG, Max 10MB)</span></label>
-                        <input type="file" id="passport" required accept="image/jpeg, image/png" class="mt-2 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100 cursor-pointer">
+                    <div class="border-b-2 border-yellow-500 pb-3 mb-6">
+                        <h3 class="text-lg md:text-xl font-bold brand-green flex items-center">
+                            <span class="bg-green-900 text-white text-xs w-6 h-6 rounded-full inline-flex items-center justify-center mr-2.5">5</span>
+                            Passport Photograph Upload
+                        </h3>
+                    </div>
+                    <div class="bg-gray-50 p-5 rounded-xl border border-dashed border-gray-300 text-center">
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Upload Passport Photograph <span class="req-star">*</span> <span class="text-xs text-gray-500 font-normal">(JPEG/PNG, Max 10MB)</span></label>
+                        <input type="file" id="passport" required accept="image/jpeg, image/png" class="block mx-auto text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-5 file:rounded-xl file:border-0 file:text-sm file:font-bold file:bg-green-50 file:text-green-800 hover:file:bg-green-100 cursor-pointer">
                     </div>
                 </div>
 
                 <!-- Submit Button Section -->
-                <div class="form-section text-center bg-transparent shadow-none border-0 p-0">
-                    <button type="submit" class="bg-brand-green text-white font-bold py-4 px-10 rounded-full shadow-lg hover:bg-green-900 transition duration-300 text-lg w-full md:w-auto transform hover:-translate-y-0.5">Submit Initial Application</button>
-                    <p class="text-sm text-gray-600 mt-4">Already approved by admin? <a href="#" onclick="switchView('view-receipt')" class="text-blue-600 font-semibold underline hover:text-blue-800">Proceed to Payment Receipt Upload</a></p>
+                <div class="text-center pt-2">
+                    <button type="submit" class="bg-brand-green text-white font-bold py-4 px-12 rounded-full shadow-lg hover:bg-green-900 transition duration-300 text-lg w-full md:w-auto transform hover:-translate-y-0.5">Submit Initial Application</button>
+                    <div class="mt-4">
+                        <button type="button" onclick="switchView('view-receipt')" class="text-sm text-blue-600 font-semibold underline hover:text-blue-800">Already approved by admin? Proceed to Payment Receipt Upload →</button>
+                    </div>
                 </div>
             </form>
 
@@ -167,29 +238,31 @@
 
         <!-- ================= PAGE 3: RECEIPT UPLOAD PAGE ================= -->
         <section id="view-receipt" class="view-container hidden-view">
-            <div class="form-section bg-green-50/50 border-l-4 border-green-600">
+            <div class="form-section bg-gradient-to-br from-green-50/80 to-white border-l-4 border-green-600">
                 <h3 class="text-2xl font-bold brand-green pb-2 mb-4">Final Step: Payment & Receipt Submission</h3>
-                <div class="mb-6 p-5 bg-white rounded-md shadow-sm border border-green-200 text-sm space-y-2">
-                    <p class="font-bold text-gray-900 text-base mb-1">Bank Payment Details:</p>
+                <div class="mb-6 p-5 bg-white rounded-xl shadow-sm border border-green-200 text-sm space-y-2">
+                    <p class="font-bold text-gray-900 text-base mb-2">Bank Payment Details:</p>
                     <p>Total Fee: <strong>#250,000</strong> (Admission #150,000 + Annual Due #100,000)</p>
                     <p>Bank Name: <strong>Omiye Bank</strong></p>
-                    <p>Account Number: <strong class="text-green-800 bg-green-100 px-2 py-0.5 rounded">1100143348</strong></p>
+                    <p>Account Number: <strong class="text-green-800 bg-green-100 px-2.5 py-1 rounded-md text-base">1100143348</strong></p>
                     <p>Account Name: <strong>ILUPEJU PATRIOTIC CLUB</strong></p>
                 </div>
                 
                 <form id="receipt-upload-form" class="space-y-5">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Your Registered Email Address <span class="req-star">*</span></label>
-                        <input type="email" id="receiptEmail" required class="mt-1 block w-full rounded-md border-gray-300 border p-2.5 uppercase bg-white">
+                        <label class="block text-sm font-semibold text-gray-700 mb-1.5">Your Registered Email Address <span class="req-star">*</span></label>
+                        <input type="email" id="receiptEmail" required class="w-full rounded-lg border-gray-300 border p-3 uppercase bg-white text-sm">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Upload Payment Receipt <span class="req-star">*</span> <span class="text-xs text-gray-500 font-normal">(PDF or Image, Max 10MB)</span></label>
-                        <input type="file" id="finalReceipt" required accept="image/jpeg, image/png, application/pdf" class="mt-2 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100 cursor-pointer">
+                        <label class="block text-sm font-semibold text-gray-700 mb-1.5">Upload Payment Receipt <span class="req-star">*</span> <span class="text-xs text-gray-500 font-normal">(PDF or Image, Max 10MB)</span></label>
+                        <input type="file" id="finalReceipt" required accept="image/jpeg, image/png, application/pdf" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-5 file:rounded-xl file:border-0 file:text-sm file:font-bold file:bg-green-50 file:text-green-800 hover:file:bg-green-100 cursor-pointer">
                     </div>
-                    <button type="submit" class="bg-brand-green text-white font-bold py-3 px-8 rounded-md shadow-md hover:bg-green-900 transition duration-300">Submit Receipt for Final Confirmation</button>
-                    <br><a href="#" onclick="switchView('view-form')" class="text-sm text-gray-600 font-medium underline mt-3 inline-block hover:text-gray-900">← Back to Registration Form</a>
+                    <button type="submit" class="bg-brand-green text-white font-bold py-3.5 px-8 rounded-xl shadow-md hover:bg-green-900 transition duration-300 w-full md:w-auto">Submit Receipt for Final Confirmation</button>
+                    <div class="mt-3">
+                        <button type="button" onclick="switchView('view-form')" class="text-sm text-gray-600 font-medium underline inline-block hover:text-gray-900">← Back to Registration Form</button>
+                    </div>
                 </form>
-                <div id="receipt-success" class="hidden mt-6 p-4 bg-emerald-100 text-emerald-800 rounded-md font-medium">
+                <div id="receipt-success" class="hidden mt-6 p-4 bg-emerald-100 text-emerald-800 rounded-xl font-medium">
                     Receipt uploaded successfully! The committee will verify your payment and email your full membership confirmation shortly.
                 </div>
             </div>
