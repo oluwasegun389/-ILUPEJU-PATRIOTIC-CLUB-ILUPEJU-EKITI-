@@ -30,6 +30,12 @@
             box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.15);
             background: #ffffff;
             padding: 4px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .logo-emblem:hover {
+            transform: scale(1.04);
+            box-shadow: 0 10px 20px -4px rgba(0, 77, 0, 0.25);
         }
         @media (min-width: 768px) {
             .logo-emblem {
@@ -72,13 +78,13 @@
     <header class="institution-header w-full mb-10 sticky top-0 z-50">
         <div class="max-w-4xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
             
-            <!-- Left: Official Seal / Logo -->
+            <!-- Left: Clickable Official Seal / Logo -->
             <div class="flex-shrink-0 flex items-center justify-center">
-                <img src="HEADER ipc.jpg" alt="Ilupeju Patriotic Club Emblem" class="logo-emblem">
+                <img src="HEADER ipc.jpg" alt="Ilupeju Patriotic Club Emblem" class="logo-emblem" onclick="switchView('view-form')" title="Click to go to Home/Registration Page">
             </div>
 
             <!-- Center: Club Identity & Credentials -->
-            <div class="flex-grow">
+            <div class="flex-grow cursor-pointer" onclick="switchView('view-form')">
                 <span class="inline-block px-3 py-1 mb-1 text-[11px] font-bold tracking-widest uppercase bg-yellow-100 text-yellow-800 rounded-full border border-yellow-300">
                     Official Membership Portal
                 </span>
@@ -88,7 +94,7 @@
                     <span class="flex items-center">📞 +2348052085396, +2348033020035</span>
                 </div>
                 <div class="mt-1">
-                    <a href="https://ilupejupatrioticclub.gov" target="_blank" class="text-xs text-blue-600 font-semibold hover:underline">https://ilupejupatrioticclub.gov</a>
+                    <a href="https://ilupejupatrioticclub.gov" target="_blank" class="text-xs text-blue-600 font-semibold hover:underline" onclick="event.stopPropagation()">https://ilupejupatrioticclub.gov</a>
                 </div>
             </div>
 
@@ -233,11 +239,19 @@
             <div id="success-message" class="hidden form-section text-center bg-emerald-50 border-emerald-500 border-2 mt-8">
                 <h2 class="text-2xl font-bold text-emerald-800 mb-2">Application Submitted Successfully!</h2>
                 <p class="text-base text-emerald-700">Your application is currently under review by the membership committee. If approved, you will receive an email containing payment instructions and your next steps.</p>
+                <button type="button" onclick="switchView('view-form')" class="mt-4 inline-flex items-center text-sm font-bold text-emerald-900 underline hover:text-emerald-700">← Back to Registration</button>
             </div>
         </section>
 
         <!-- ================= PAGE 3: RECEIPT UPLOAD PAGE ================= -->
         <section id="view-receipt" class="view-container hidden-view">
+            <!-- Back Button Header inside view -->
+            <div class="mb-4">
+                <button type="button" onclick="switchView('view-form')" class="inline-flex items-center text-sm font-bold text-green-900 bg-white px-4 py-2 rounded-xl shadow-sm border border-gray-200 hover:bg-gray-50 transition">
+                    ← Back to Registration Form
+                </button>
+            </div>
+
             <div class="form-section bg-gradient-to-br from-green-50/80 to-white border-l-4 border-green-600">
                 <h3 class="text-2xl font-bold brand-green pb-2 mb-4">Final Step: Payment & Receipt Submission</h3>
                 <div class="mb-6 p-5 bg-white rounded-xl shadow-sm border border-green-200 text-sm space-y-2">
@@ -264,6 +278,9 @@
                 </form>
                 <div id="receipt-success" class="hidden mt-6 p-4 bg-emerald-100 text-emerald-800 rounded-xl font-medium">
                     Receipt uploaded successfully! The committee will verify your payment and email your full membership confirmation shortly.
+                    <div class="mt-3">
+                        <button type="button" onclick="switchView('view-form')" class="text-sm font-bold underline text-emerald-900">Return to Home Page</button>
+                    </div>
                 </div>
             </div>
         </section>
