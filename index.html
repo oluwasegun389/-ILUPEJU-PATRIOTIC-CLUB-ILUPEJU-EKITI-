@@ -14,12 +14,33 @@
         body { 
             background: linear-gradient(135deg, #f0fdf4 0%, #f3f4f6 100%);
             min-height: 100vh;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            position: relative;
+            overflow-x: hidden;
+        }
+        /* Transparent Background Watermark Logo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 550px;
+            height: 550px;
+            background-image: url('HEADER ipc.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 0;
         }
         .institution-header {
             background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
             border-bottom: 3px solid #eab308;
             box-shadow: 0 4px 20px -2px rgba(0, 77, 0, 0.08);
+            position: relative;
+            z-index: 10;
         }
         .logo-emblem {
             width: 75px;
@@ -44,12 +65,15 @@
             }
         }
         .form-section { 
-            background: #ffffff; 
+            background: rgba(255, 255, 255, 0.95); 
             padding: 2.25rem; 
             border-radius: 1rem; 
             box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.06), 0 4px 6px -4px rgba(0, 0, 0, 0.03); 
             margin-bottom: 2rem; 
             border: 1px solid rgba(229, 231, 235, 0.9);
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(4px);
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .form-section:hover {
@@ -83,7 +107,7 @@
                 <img src="HEADER ipc.jpg" alt="Ilupeju Patriotic Club Emblem" class="logo-emblem" onclick="switchView('view-form')" title="Click to go to Home/Registration Page">
             </div>
 
-            <!-- Center: Bold Broad Club Title & Credentials (As requested, cleanly centered) -->
+            <!-- Center: Bold Broad Club Title & Credentials -->
             <div class="flex-grow flex flex-col items-center justify-center text-center">
                 <span class="inline-block px-3 py-0.5 mb-1 text-[10px] font-bold tracking-widest uppercase bg-yellow-100 text-yellow-800 rounded-full border border-yellow-300">
                     Official Membership Portal
@@ -111,7 +135,7 @@
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 relative z-10">
 
         <!-- ================= PAGE 1: REGISTRATION FORM ================= -->
         <section id="view-form" class="view-container">
@@ -343,7 +367,7 @@
                     child4Name: viewId('child4Name').value,
                     child4Age: viewId('child4Age').value,
                     emergencyName: viewId('emergencyName').value,
-                    emergencyRelation: viewId('emergencyRelation').value,
+                    emergencyRelation: viewId('emergencyRelation'].value,
                     emergencyPhone: viewId('emergencyPhone').value,
                     expectedContributions: viewId('expectedContributions').value,
                     sponsorName: viewId('sponsorName').value,
