@@ -3,249 +3,352 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Membership Portal - Ilupeju Patriotic Club</title>
-    <!-- Tailwind CSS for modern, responsive styling -->
+    <title>IPC Membership Portal | Ilupeju Patriotic Club</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 text-gray-800 font-sans">
-
-    <div class="max-w-4xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
-        <!-- Header -->
-        <div class="bg-white rounded-t-2xl shadow-sm p-8 border-b border-gray-100 text-center">
-            <h1 class="text-3xl font-bold text-emerald-800">Ilupeju Patriotic Club</h1>
-            <p class="text-gray-500 mt-1">Official Membership Application Portal</p>
-        </div>
-
-        <!-- Form Container -->
-        <form id="registrationForm" class="bg-white rounded-b-2xl shadow-xl p-8 space-y-8">
-            
-            <!-- Section 1: Personal Information -->
-            <div>
-                <h2 class="text-xl font-semibold text-gray-700 border-b pb-2 mb-4">1. Personal Information</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
-                        <input type="text" id="fullName" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Date of Birth *</label>
-                        <input type="date" id="dob" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Marital Status *</label>
-                        <select id="maritalStatus" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                            <option value="">Select Status</option>
-                            <option value="Single">Single</option>
-                            <option value="Married">Married</option>
-                            <option value="Divorced">Divorced</option>
-                            <option value="Widowed">Widowed</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
-                        <input type="tel" id="phone" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
-                        <input type="email" id="email" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">City / State *</label>
-                        <input type="text" id="cityState" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                    </div>
-                    <div class="md:col-span-2">
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Contact Address *</label>
-                        <textarea id="contactAddress" rows="2" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none"></textarea>
-                    </div>
-                    <div class="md:col-span-2">
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Permanent Address</label>
-                        <textarea id="permanentAddress" rows="2" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Section 2: Professional Details -->
-            <div>
-                <h2 class="text-xl font-semibold text-gray-700 border-b pb-2 mb-4">2. Professional & Business Details</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Occupation *</label>
-                        <input type="text" id="occupation" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Employer / Company Name</label>
-                        <input type="text" id="employer" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                    </div>
-                    <div class="md:col-span-2">
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Nature of Business</label>
-                        <input type="text" id="natureOfBusiness" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Section 3: Family & Emergency -->
-            <div>
-                <h2 class="text-xl font-semibold text-gray-700 border-b pb-2 mb-4">3. Family & Emergency Contacts</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Spouse Name (If applicable)</label>
-                        <input type="text" id="spouseName" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Spouse Phone Number</label>
-                        <input type="tel" id="spousePhone" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                    </div>
-                </div>
-
-                <!-- Children Grid -->
-                <div class="space-y-3 mb-6 bg-gray-50 p-4 rounded-xl">
-                    <label class="block text-sm font-medium text-gray-700">Children Information (Up to 4)</label>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <input type="text" id="child1Name" placeholder="Child 1 Name" class="px-3 py-2 border rounded-md bg-white">
-                        <input type="text" id="child1Age" placeholder="Child 1 Age" class="px-3 py-2 border rounded-md bg-white">
-                        <input type="text" id="child2Name" placeholder="Child 2 Name" class="px-3 py-2 border rounded-md bg-white">
-                        <input type="text" id="child2Age" placeholder="Child 2 Age" class="px-3 py-2 border rounded-md bg-white">
-                        <input type="text" id="child3Name" placeholder="Child 3 Name" class="px-3 py-2 border rounded-md bg-white">
-                        <input type="text" id="child3Age" placeholder="Child 3 Age" class="px-3 py-2 border rounded-md bg-white">
-                        <input type="text" id="child4Name" placeholder="Child 4 Name" class="px-3 py-2 border rounded-md bg-white">
-                        <input type="text" id="child4Age" placeholder="Child 4 Age" class="px-3 py-2 border rounded-md bg-white">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Emergency Contact Name *</label>
-                        <input type="text" id="emergencyName" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Relationship *</label>
-                        <input type="text" id="emergencyRelation" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Emergency Phone *</label>
-                        <input type="tel" id="emergencyPhone" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Section 4: Club Sponsorship & Passport Upload -->
-            <div>
-                <h2 class="text-xl font-semibold text-gray-700 border-b pb-2 mb-4">4. Sponsorship & Documentation</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Expected Contributions / Ideas</label>
-                        <textarea id="expectedContributions" rows="2" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none"></textarea>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Sponsor Name & Comments</label>
-                        <input type="text" id="sponsorName" placeholder="Sponsor Name" class="w-full px-4 py-2 border rounded-lg mb-2 focus:outline-none">
-                        <input type="text" id="sponsorComments" placeholder="Sponsor Comments" class="w-full px-4 py-2 border rounded-lg focus:outline-none">
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Passport Photograph (JPEG/PNG/PDF) *</label>
-                    <input type="file" id="passportFile" accept="image/*,application/pdf" required class="w-full px-3 py-2 border rounded-lg bg-gray-50 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100">
-                </div>
-            </div>
-
-            <!-- Submit Button -->
-            <div class="pt-4">
-                <button type="submit" id="submitBtn" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold py-3 px-6 rounded-xl transition duration-200 shadow-md">
-                    Submit Application
-                </button>
-            </div>
-
-            <!-- Status Feedback Box -->
-            <div id="statusMessage" class="hidden text-center p-4 rounded-xl font-medium"></div>
-        </form>
-    </div>
-
-    <!-- Frontend Script -->
-    <script>
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyvsPTu3HB7VX9J2UwUm2eO4M02bm4eTLUJbBhBQH0PqYnXrRKsYNUekmspdB8hZnVu0Q/exec";
-
-        document.getElementById('registrationForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            const btn = document.getElementById('submitBtn');
-            const statusDiv = document.getElementById('statusMessage');
-            
-            btn.disabled = true;
-            btn.innerText = "Submitting application...";
-            statusDiv.className = "hidden";
-
-            const fileInput = document.getElementById('passportFile');
-            if (fileInput.files.length === 0) {
-                alert("Please upload a passport photograph.");
-                btn.disabled = false;
-                btn.innerText = "Submit Application";
-                return;
+    <style>
+        :root {
+            --brand-green: #004d00;
+            --brand-gold: #c5a059;
+            --brand-dark: #0f172a;
+        }
+        body { 
+            background: linear-gradient(135deg, #f0fdf4 0%, #f3f4f6 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            position: relative;
+            overflow-x: hidden;
+        }
+        /* Transparent Background Watermark Logo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 550px;
+            height: 550px;
+            background-image: url('HEADER ipc.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .institution-header {
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            border-bottom: 3px solid #eab308;
+            box-shadow: 0 4px 20px -2px rgba(0, 77, 0, 0.08);
+            position: relative;
+            z-index: 10;
+        }
+        .logo-emblem {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 2px solid #eab308;
+            box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.12);
+            background: #ffffff;
+            padding: 3px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .logo-emblem:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 14px -3px rgba(0, 77, 0, 0.2);
+        }
+        @media (min-width: 768px) {
+            .logo-emblem {
+                width: 90px;
+                height: 90px;
             }
+        }
+        .form-section { 
+            background: rgba(255, 255, 255, 0.95); 
+            padding: 2.25rem; 
+            border-radius: 1rem; 
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.06), 0 4px 6px -4px rgba(0, 0, 0, 0.03); 
+            margin-bottom: 2rem; 
+            border: 1px solid rgba(229, 231, 235, 0.9);
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(4px);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .form-section:hover {
+            box-shadow: 0 20px 35px -12px rgba(0, 77, 0, 0.08);
+        }
+        .brand-green { color: #004d00; }
+        .bg-brand-green { background-color: #004d00; }
+        .bg-brand-green:hover { background-color: #003300; }
+        .req-star { color: #dc2626; font-weight: 700; }
+        input, select, textarea { 
+            transition: all 0.2s ease-in-out;
+            background-color: #fafafa;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            background-color: #ffffff;
+            border-color: #004d00;
+            box-shadow: 0 0 0 4px rgba(0, 77, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
 
-            const file = fileInput.files[0];
+    <!-- EXECUTIVE INSTITUTIONAL HEADER -->
+    <header class="institution-header w-full mb-10 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            <!-- Left: Standalone Clickable Official Logo -->
+            <div class="flex-shrink-0 flex items-center">
+                <img src="HEADER ipc.jpg" alt="Ilupeju Patriotic Club Emblem" class="logo-emblem" onclick="window.location.href='index.html'" title="Click to go to Home/Registration Page">
+            </div>
+
+            <!-- Center: Bold Broad Club Title & Credentials -->
+            <div class="flex-grow flex flex-col items-center justify-center text-center">
+                <span class="inline-block px-3 py-0.5 mb-1 text-[10px] font-bold tracking-widest uppercase bg-yellow-100 text-yellow-800 rounded-full border border-yellow-300">
+                    Official Membership Portal
+                </span>
+                <h1 class="text-2xl md:text-3xl brand-green uppercase tracking-wide font-black" style="font-weight: 900; letter-spacing: 0.04em;">Ilupeju Patriotic Club</h1>
+                <div class="mt-1 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-gray-600 font-medium">
+                    <span>📍 20B Apata-Aje Street, Ilupeju-Ekiti, Ekiti State</span>
+                    <span>📞 +2348052085396, +2348033020035</span>
+                </div>
+                <div class="mt-1">
+                    <a href="https://ilupejupatrioticclub.gov" target="_blank" class="text-xs text-blue-600 font-semibold hover:underline">https://ilupejupatrioticclub.gov</a>
+                </div>
+            </div>
+
+            <!-- Right: WhatsApp Support Button -->
+            <div class="flex-shrink-0">
+                <a href="https://wa.me/13013435551" target="_blank" class="inline-flex items-center bg-emerald-600 text-white text-xs font-bold py-2.5 px-4 rounded-xl shadow-sm hover:bg-emerald-700 transition duration-200">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    </svg>
+                    WhatsApp Support
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 relative z-10">
+
+        <!-- ================= PAGE 1: REGISTRATION FORM ================= -->
+        <section id="view-form" class="view-container">
+            <form id="ipc-registration-form" class="space-y-6">
+                
+                <!-- 1. Personal Information -->
+                <div class="form-section">
+                    <div class="flex items-center justify-between border-b-2 border-yellow-500 pb-3 mb-6">
+                        <h3 class="text-lg md:text-xl font-bold brand-green flex items-center">
+                            <span class="bg-green-900 text-white text-xs w-6 h-6 rounded-full inline-flex items-center justify-center mr-2.5">1</span>
+                            Personal Information
+                        </h3>
+                        <span class="text-xs font-semibold text-red-600 bg-red-50 px-2.5 py-1 rounded-md border border-red-100">* Required fields</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Full Name <span class="req-star">*</span></label><input type="text" id="fullName" required class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Date of Birth <span class="req-star">*</span></label><input type="date" id="dob" required class="w-full rounded-lg border-gray-300 border p-3 text-sm"></div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Marital Status <span class="req-star">*</span></label>
+                            <select id="maritalStatus" required class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm">
+                                <option value="">SELECT STATUS...</option>
+                                <option value="SINGLE">SINGLE</option>
+                                <option value="MARRIED">MARRIED</option>
+                                <option value="DIVORCED">DIVORCED</option>
+                                <option value="WIDOWED">WIDOWED</option>
+                            </select>
+                        </div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Telephone Number <span class="req-star">*</span></label><input type="tel" id="phone" required class="w-full rounded-lg border-gray-300 border p-3 text-sm"></div>
+                        <div class="md:col-span-2"><label class="block text-sm font-semibold text-gray-700 mb-1.5">Email Address <span class="req-star">*</span> <span class="text-xs text-gray-500 font-normal">(Used for tracking application status)</span></label><input type="email" id="email" required class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
+                        <div class="md:col-span-2"><label class="block text-sm font-semibold text-gray-700 mb-1.5">Contact Address <span class="req-star">*</span></label><input type="text" id="contactAddress" required class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
+                        <div class="md:col-span-2"><label class="block text-sm font-semibold text-gray-700 mb-1.5">Permanent Address <span class="req-star">*</span></label><textarea id="permanentAddress" required rows="2" class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></textarea></div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">City/State/Country <span class="req-star">*</span></label><input type="text" id="cityState" required class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Occupation <span class="req-star">*</span></label><input type="text" id="occupation" required class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Employer/Business Name</label><input type="text" id="employer" class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Nature of Business</label><input type="text" id="natureOfBusiness" class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
+                    </div>
+                </div>
+
+                <!-- 2. Family & Emergency Info (Includes Children) -->
+                <div class="form-section">
+                    <div class="border-b-2 border-yellow-500 pb-3 mb-6">
+                        <h3 class="text-lg md:text-xl font-bold brand-green flex items-center">
+                            <span class="bg-green-900 text-white text-xs w-6 h-6 rounded-full inline-flex items-center justify-center mr-2.5">2</span>
+                            Family & Emergency Info
+                        </h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Spouse’s Name</label><input type="text" id="spouseName" class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Spouse’s Telephone</label><input type="tel" id="spousePhone" class="w-full rounded-lg border-gray-300 border p-3 text-sm"></div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="text-sm font-bold text-gray-700 uppercase tracking-wider mb-3">Children Information (Optional)</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50/80 p-4 rounded-xl border border-gray-200">
+                            <div><input type="text" id="child1Name" placeholder="1. Child Full Name" class="w-full rounded-lg border-gray-300 border p-2.5 uppercase bg-white text-sm"></div>
+                            <div><input type="number" id="child1Age" placeholder="Child 1 Age" class="w-full rounded-lg border-gray-300 border p-2.5 bg-white text-sm"></div>
+                            <div><input type="text" id="child2Name" placeholder="2. Child Full Name" class="w-full rounded-lg border-gray-300 border p-2.5 uppercase bg-white text-sm"></div>
+                            <div><input type="number" id="child2Age" placeholder="Child 2 Age" class="w-full rounded-lg border-gray-300 border p-2.5 bg-white text-sm"></div>
+                            <div><input type="text" id="child3Name" placeholder="3. Child Full Name" class="w-full rounded-lg border-gray-300 border p-2.5 uppercase bg-white text-sm"></div>
+                            <div><input type="number" id="child3Age" placeholder="Child 3 Age" class="w-full rounded-lg border-gray-300 border p-2.5 bg-white text-sm"></div>
+                            <div><input type="text" id="child4Name" placeholder="4. Child Full Name" class="w-full rounded-lg border-gray-300 border p-2.5 uppercase bg-white text-sm"></div>
+                            <div><input type="number" id="child4Age" placeholder="Child 4 Age" class="w-full rounded-lg border-gray-300 border p-2.5 bg-white text-sm"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Emergency Contact Name <span class="req-star">*</span></label><input type="text" id="emergencyName" required class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Relationship <span class="req-star">*</span></label><input type="text" id="emergencyRelation" required class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Phone <span class="req-star">*</span></label><input type="tel" id="emergencyPhone" required class="w-full rounded-lg border-gray-300 border p-3 text-sm"></div>
+                    </div>
+                </div>
+
+                <!-- 3. Expected Contributions -->
+                <div class="form-section">
+                    <div class="border-b-2 border-yellow-500 pb-3 mb-6">
+                        <h3 class="text-lg md:text-xl font-bold brand-green flex items-center">
+                            <span class="bg-green-900 text-white text-xs w-6 h-6 rounded-full inline-flex items-center justify-center mr-2.5">3</span>
+                            Expected Contributions
+                        </h3>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1.5">Expected Contributions to the Club (Skills and areas of interest) <span class="req-star">*</span></label>
+                        <textarea id="expectedContributions" rows="3" required class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></textarea>
+                    </div>
+                </div>
+
+                <!-- 4. Sponsor Recommendation (Optional) -->
+                <div class="form-section">
+                    <div class="border-b-2 border-yellow-500 pb-3 mb-6">
+                        <h3 class="text-lg md:text-xl font-bold brand-green flex items-center">
+                            <span class="bg-green-900 text-white text-xs w-6 h-6 rounded-full inline-flex items-center justify-center mr-2.5">4</span>
+                            Sponsor Recommendation <span class="text-xs font-normal text-gray-500 ml-2">(Optional)</span>
+                        </h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Sponsor's Name</label><input type="text" id="sponsorName" class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></div>
+                        <div><label class="block text-sm font-semibold text-gray-700 mb-1.5">Sponsor's Comments / Recommendation</label><textarea id="sponsorComments" rows="2" class="w-full rounded-lg border-gray-300 border p-3 uppercase text-sm"></textarea></div>
+                    </div>
+                </div>
+
+                <!-- 5. Passport Photograph Upload -->
+                <div class="form-section">
+                    <div class="border-b-2 border-yellow-500 pb-3 mb-6">
+                        <h3 class="text-lg md:text-xl font-bold brand-green flex items-center">
+                            <span class="bg-green-900 text-white text-xs w-6 h-6 rounded-full inline-flex items-center justify-center mr-2.5">5</span>
+                            Passport Photograph Upload
+                        </h3>
+                    </div>
+                    <div class="bg-gray-50 p-5 rounded-xl border border-dashed border-gray-300 text-center">
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Upload Passport Photograph <span class="req-star">*</span> <span class="text-xs text-gray-500 font-normal">(JPEG/PNG, Max 10MB)</span></label>
+                        <input type="file" id="passport" required accept="image/jpeg, image/png" class="block mx-auto text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-5 file:rounded-xl file:border-0 file:text-sm file:font-bold file:bg-green-50 file:text-green-800 hover:file:bg-green-100 cursor-pointer">
+                    </div>
+                </div>
+
+                <!-- Submit Button Section -->
+                <div class="text-center pt-2">
+                    <button type="submit" class="bg-brand-green text-white font-bold py-4 px-12 rounded-full shadow-lg hover:bg-green-900 transition duration-300 text-lg w-full md:w-auto transform hover:-translate-y-0.5">Submit Initial Application</button>
+                    <div class="mt-4">
+                        <button type="button" onclick="window.location.href='payment.html'" class="text-sm text-blue-600 font-semibold underline hover:text-blue-800">Already approved by admin? Proceed to Payment Receipt Upload →</button>
+                    </div>
+                </div>
+            </form>
+
+            <div id="success-message" class="hidden form-section text-center bg-emerald-50 border-emerald-500 border-2 mt-8">
+                <h2 class="text-2xl font-bold text-emerald-800 mb-2">Application Submitted Successfully!</h2>
+                <p class="text-base text-emerald-700">Your application is currently under review by the membership committee. If approved, you will receive an email containing payment instructions and your next steps.</p>
+                <button type="button" onclick="window.location.reload();" class="mt-4 inline-flex items-center text-sm font-bold text-emerald-900 underline hover:text-emerald-700">← Back to Registration</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyvsPTu3HB7VX9J2UwUm2eO4M02bm4eTLUJbBhBQH0PqYnXrRKsYNUekmspdB8hZnVu0Q/exec'; 
+
+        function viewId(id) { return document.getElementById(id); }
+
+        const getBase64 = (file) => new Promise((resolve, reject) => {
             const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve({ name: file.name, mime: file.type, data: reader.result.split(',')[1] });
+            reader.onerror = error => reject(error);
+        });
 
-            reader.onload = async function() {
-                const base64Data = reader.result.split(',')[1];
+        // 1. Handle Registration Submission
+        viewId('ipc-registration-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const passportFile = viewId('passport').files[0];
+            if (!passportFile) { alert("Please attach a passport photograph."); return; }
+            if (passportFile.size > 10 * 1024 * 1024) { alert("Passport file exceeds 10MB limit."); return; }
 
-                const payload = {
-                    action: "register",
-                    fullName: document.getElementById('fullName').value,
-                    dob: document.getElementById('dob').value,
-                    maritalStatus: document.getElementById('maritalStatus').value,
-                    contactAddress: document.getElementById('contactAddress').value,
-                    permanentAddress: document.getElementById('permanentAddress').value,
-                    cityState: document.getElementById('cityState').value,
-                    phone: document.getElementById('phone').value,
-                    email: document.getElementById('email').value,
-                    occupation: document.getElementById('occupation').value,
-                    employer: document.getElementById('employer').value,
-                    natureOfBusiness: document.getElementById('natureOfBusiness').value,
-                    spouseName: document.getElementById('spouseName').value,
-                    spousePhone: document.getElementById('spousePhone').value,
-                    child1Name: document.getElementById('child1Name').value,
-                    child1Age: document.getElementById('child1Age').value,
-                    child2Name: document.getElementById('child2Name').value,
-                    child2Age: document.getElementById('child2Age').value,
-                    child3Name: document.getElementById('child3Name').value,
-                    child3Age: document.getElementById('child3Age').value,
-                    child4Name: document.getElementById('child4Name').value,
-                    child4Age: document.getElementById('child4Age').value,
-                    emergencyName: document.getElementById('emergencyName').value,
-                    emergencyRelation: document.getElementById('emergencyRelation').value,
-                    emergencyPhone: document.getElementById('emergencyPhone').value,
-                    expectedContributions: document.getElementById('expectedContributions').value,
-                    sponsorName: document.getElementById('sponsorName').value,
-                    sponsorComments: document.getElementById('sponsorComments').value,
-                    passportData: base64Data,
-                    passportMime: file.type,
-                    passportName: file.name
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+            btn.innerText = "Processing & Uploading Passport... Please wait ⏳"; 
+            btn.disabled = true;
+            btn.classList.add('opacity-75', 'cursor-not-allowed');
+
+            try {
+                let payload = {
+                    action: 'register',
+                    fullName: viewId('fullName').value,
+                    dob: viewId('dob').value,
+                    maritalStatus: viewId('maritalStatus').value,
+                    phone: viewId('phone').value,
+                    email: viewId('email').value,
+                    contactAddress: viewId('contactAddress').value,
+                    permanentAddress: viewId('permanentAddress').value,
+                    cityState: viewId('cityState').value,
+                    occupation: viewId('occupation').value,
+                    employer: viewId('employer').value,
+                    natureOfBusiness: viewId('natureOfBusiness').value,
+                    spouseName: viewId('spouseName').value,
+                    spousePhone: viewId('spousePhone').value,
+                    child1Name: viewId('child1Name').value,
+                    child1Age: viewId('child1Age').value,
+                    child2Name: viewId('child2Name').value,
+                    child2Age: viewId('child2Age').value,
+                    child3Name: viewId('child3Name').value,
+                    child3Age: viewId('child3Age').value,
+                    child4Name: viewId('child4Name').value,
+                    child4Age: viewId('child4Age').value,
+                    emergencyName: viewId('emergencyName').value,
+                    emergencyRelation: viewId('emergencyRelation').value,
+                    emergencyPhone: viewId('emergencyPhone').value,
+                    expectedContributions: viewId('expectedContributions').value,
+                    sponsorName: viewId('sponsorName').value,
+                    sponsorComments: viewId('sponsorComments').value
                 };
 
-                try {
-                    const response = await fetch(SCRIPT_URL, {
-                        method: "POST",
-                        body: JSON.stringify(payload)
-                    });
-                    const result = await response.json();
+                const pData = await getBase64(passportFile);
+                payload.passportName = pData.name; 
+                payload.passportMime = pData.mime; 
+                payload.passportData = pData.data;
 
-                    if (result.status === "success") {
-                        statusDiv.className = "block bg-emerald-50 text-emerald-800 p-4 rounded-xl text-center";
-                        statusDiv.innerText = "Application submitted successfully! Your submission is under review. Check your email for updates.";
-                        document.getElementById('registrationForm').reset();
-                    } else {
-                        throw new Error(result.message || "Submission failed.");
-                    }
-                } catch (error) {
-                    statusDiv.className = "block bg-red-50 text-red-800 p-4 rounded-xl text-center";
-                    statusDiv.innerText = "Error: " + error.message;
-                    btn.disabled = false;
-                    btn.innerText = "Submit Application";
+                const response = await fetch(scriptURL, { method: 'POST', body: JSON.stringify(payload) });
+                const result = await response.json();
+
+                if (result.status === 'success') {
+                    viewId('ipc-registration-form').classList.add('hidden');
+                    viewId('success-message').classList.remove('hidden');
+                    window.scrollTo(0,0);
+                } else { 
+                    alert("Error: " + result.message); 
+                    btn.innerText = originalText; 
+                    btn.disabled = false; 
+                    btn.classList.remove('opacity-75', 'cursor-not-allowed');
                 }
-            };
-
-            reader.readAsDataURL(file);
+            } catch (err) { 
+                alert("Network error. Please check your connection and try again."); 
+                btn.innerText = originalText; 
+                btn.disabled = false; 
+                btn.classList.remove('opacity-75', 'cursor-not-allowed');
+            }
         });
     </script>
 </body>
