@@ -1,5 +1,13 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/upload.html" }
+  "version": 2,
+  "routes": [
+    {
+      "src": "/payment",
+      "dest": "/payment.html"
+    },
+    {
+      "src": "/register",
+      "dest": "/index.html"
+    }
   ]
 }
