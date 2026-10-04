@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Receipt Upload | Ilupeju Patriotic Club</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --brand-green: #004d00;
+            --brand-gold: #c5a059;
+        }
+        body { 
+            background: linear-gradient(135deg, #f0fdf4 0%, #f3f4f6 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        .institution-header {
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            border-bottom: 3px solid #eab308;
+            box-shadow: 0 4px 20px -2px rgba(0, 77, 0, 0.08);
+        }
+        .logo-emblem {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 2px solid #eab308;
+            background: #ffffff;
+            padding: 3px;
+        }
+        .form-section { 
+            background: rgba(255, 255, 255, 0.95); 
+            padding: 2.25rem; 
+            border-radius: 1rem; 
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.06); 
+            border: 1px solid rgba(229, 231, 235, 0.9);
+        }
+        .brand-green { color: #004d00; }
+        .bg-brand-green { background-color: #004d00; }
+        .bg-brand-green:hover { background-color: #003300; }
+        .req-star { color: #dc2626; font-weight: 700; }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <header class="institution-header w-full mb-10">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex-shrink-0 flex items-center">
+                <img src="HEADER ipc.jpg" alt="Ilupeju Patriotic Club Emblem" class="logo-emblem">
+            </div>
+            <div class="flex-grow flex flex-col items-center justify-center text-center">
+                <span class="inline-block px-3 py-0.5 mb-1 text-[10px] font-bold tracking-widest uppercase bg-yellow-100 text-yellow-800 rounded-full border border-yellow-300">
+                    Payment Verification Portal
+                </span>
+                <h1 class="text-2xl md:text-3xl brand-green uppercase tracking-wide font-black" style="font-weight: 900;">Ilupeju Patriotic Club</h1>
+                <div class="mt-1 text-xs text-gray-600 font-medium">
+                    <span>📍 20B Apata-Aje Street, Ilupeju-Ekiti, Ekiti State</span>
+                </div>
+            </div>
+            <div class="flex-shrink-0">
+                <a href="https://ipcregistration.vercel.app/" class="text-xs font-bold text-green-900 bg-white px-4 py-2.5 rounded-xl border border-gray-200 shadow-sm hover:bg-gray-50">
+                    ← Back to Registration Site
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-xl mx-auto px-4 pb-16">
+        <div class="form-section bg-gradient-to-br from-green-50/80 to-white border-l-4 border-green-600">
+            <h3 class="text-2xl font-bold brand-green pb-2 mb-4">Payment & Receipt Submission</h3>
+            <div class="mb-6 p-5 bg-white rounded-xl shadow-sm border border-green-200 text-sm space-y-2">
+                <p class="font-bold text-gray-900 text-base mb-2">Bank Payment Details:</p>
+                <p>Total Fee: <strong>#250,000</strong> (Admission #150,000 + Annual Due #100,000)</p>
+                <p>Bank Name: <strong>Omiye Bank</strong></p>
+                <p>Account Number: <strong class="text-green-800 bg-green-100 px-2.5 py-1 rounded-md text-base">1100143348</strong></p>
+                <p>Account Name: <strong>ILUPEJU PATRIOTIC CLUB</strong></p>
+            </div>
+            
+            <form id="receipt-upload-form" class="space-y-5">
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1.5">Your Registered Email Address <span class="req-star">*</span></label>
+                    <input type="email" id="receiptEmail" required placeholder="ENTER YOUR REGISTERED EMAIL" class="w-full rounded-lg border-gray-300 border p-3 uppercase bg-white text-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1.5">Upload Payment Receipt <span class="req-star">*</span> <span class="text-xs text-gray-500 font-normal">(PDF or Image, Max 10MB)</span></label>
+                    <input type="file" id="finalReceipt" required accept="image/jpeg, image/png, application/pdf" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-5 file:rounded-xl file:border-0 file:text-sm file:font-bold file:bg-green-50 file:text-green-800 hover:file:bg-green-100 cursor-pointer">
+                </div>
+                <button type="submit" class="bg-brand-green text-white font-bold py-3.5 px-8 rounded-xl shadow-md hover:bg-green-900 transition duration-300 w-full">Submit Receipt for Final Confirmation</button>
+            </form>
+
+            <div id="receipt-success" class="hidden mt-6 p-5 bg-emerald-100 text-emerald-900 rounded-xl font-medium text-center space-y-3">
+                <p class="font-bold text-lg">Receipt uploaded successfully!</p>
+                <p class="text-sm">The committee has received your payment confirmation. Your membership verification details have been sent to your email.</p>
+                <a href="https://ipcregistration.vercel.app/" class="inline-block text-sm font-bold underline text-emerald-900">Return to Home Page</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_DEPLOYMENT_URL_HERE'; 
+
+        const getBase64 = (file) => new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve({ name: file.name, mime: file.type, data: reader.result.split(',')[1] });
+            reader.onerror = error => reject(error);
+        });
+
+        document.getElementById('receipt-upload-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const file = document.getElementById('finalReceipt').files[0];
+            const email = document.getElementById('receiptEmail').value;
+            if (!file || !email) { alert("Please provide your email and receipt file."); return; }
+
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+            btn.innerText = "Uploading Receipt & Notifying Admin... Please wait ⏳"; 
+            btn.disabled = true;
+
+            try {
+                const rData = await getBase64(file);
+                let payload = {
+                    action: 'uploadReceipt',
+                    email: email,
+                    receiptName: rData.name,
+                    receiptMime: rData.mime,
+                    receiptData: rData.data
+                };
+
+                const response = await fetch(scriptURL, { method: 'POST', body: JSON.stringify(payload) });
+                const result = await response.json();
+
+                if (result.status === 'success') {
+                    document.getElementById('receipt-upload-form').classList.add('hidden');
+                    document.getElementById('receipt-success').classList.remove('hidden');
+                } else { 
+                    alert("Error: " + result.message); 
+                    btn.innerText = originalText; 
+                    btn.disabled = false; 
+                }
+            } catch (err) { 
+                alert("Network error. Please try again."); 
+                btn.innerText = originalText; 
+                btn.disabled = false; 
+            }
+        });
+    </script>
+</body>
+</html>
